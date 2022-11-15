@@ -10,47 +10,45 @@ function App() {
   const randomNumber2 = Math.floor(Math.random()*10);
 
   const [number , setNumber] = React.useState(0);
-  const [value , setValue] = React.useState('');
-
-  const matchResult = false;
+  const [value, setValue] = React.useState('') ;
+ 
 
  const  result = randomNumber*randomNumber2;
 
+  const handleOnChange = event => setValue(event.target.value);
 
- const handleOnChange = (e) => setValue(e.target.value) ; e.preventDefault();
+  const handleOnClickButton = () => { console.log("dziala")
+  
 
- const handleOnClickButton = () => {
-  if(result === value ) {
-      matchResult = !matchResult ;
-  }
- 
-}
+  if(result == value) {
+    console.log("zgadles !!!")
+    document.getElementById('demo').innerHTML = " Zgadles";
+  }else(document.getElementById('demo').innerHTML = " proboj dalej")
+};
+
+  
+
 
   return (
     <div className="App">
-      <p> poczatkowa liczba to {number} </p>
+      <p> Ilosc zadan : {number} </p>
       <p> pierwsza liczba to {randomNumber}</p>
       <p> druga liczba liczba to {randomNumber2}</p>
 
       <h1> Jaki jest wynik działania :  {randomNumber} razy {randomNumber2}</h1>
-      <h2> Twoj wynik mnożenia to : {value}</h2>
-      <h2> Podaj wynik mnożenia : 
+      <h2> wynik mnożenia to : {result}</h2>
+      <h2> twoja liczba to : {value}</h2>
 
-        <input type="number" className="inputValue" onChange={handleOnChange} value={value}></input>
-        
-        </h2>
 
-        <h1>  {matchResult ? "doskonale zgadles" : "sproboj jeszcze raz"}</h1>
+
+      <input  type = "number"  id = "myNumber" value = {value} onChange = {handleOnChange}></input>
+
+      <p id="demo"></p>
+     
 
 
         <button onClick={handleOnClickButton}>Zatwierdzam</button>
-
-
-
-
-    
-
-      <button onClick={ () => setNumber(number+1)}> Click me to add 1</button>
+        <button onClick={ () => setNumber(number+1)}> Nastepne zadanie </button>
      
     </div>
   );
