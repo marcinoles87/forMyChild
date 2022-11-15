@@ -6,14 +6,21 @@ import app from "../src/app.css" ;
 
 function App() {
 
-  const randomNumber = Math.floor(Math.random()*10);
-  const randomNumber2 = Math.floor(Math.random()*10);
+
+  const handlerandomNumbers = () => {
+    const randomNumber = Math.floor(Math.random()*10);
+    const randomNumber2 = Math.floor(Math.random()*10);
+    const  result = randomNumber*randomNumber2;
+    
+
+  }
+
 
   const [number , setNumber] = React.useState(0);
   const [value, setValue] = React.useState('') ;
  
 
- const  result = randomNumber*randomNumber2;
+ 
 
   const handleOnChange = event => setValue(event.target.value);
 
@@ -46,7 +53,7 @@ function App() {
       <p id="demo"></p>
      
 
-
+        <button onClick={handlerandomNumbers}> Losuj liczby</button>
         <button onClick={handleOnClickButton}>Zatwierdzam</button>
         <button onClick={ () => setNumber(number+1)}> Nastepne zadanie </button>
      
