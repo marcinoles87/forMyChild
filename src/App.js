@@ -12,13 +12,17 @@ function App() {
   const [number , setNumber] = React.useState(0);
   const [value , setValue] = React.useState('');
 
+  const matchResult = false;
+
  const  result = randomNumber*randomNumber2;
 
 
- const handleOnChange = (e) => setValue(e.target.value);
+ const handleOnChange = (e) => setValue(e.target.value) ; e.preventDefault();
 
  const handleOnClickButton = () => {
-  console.log("dzialam");
+  if(result === value ) {
+      matchResult = !matchResult ;
+  }
  
 }
 
@@ -29,11 +33,14 @@ function App() {
       <p> druga liczba liczba to {randomNumber2}</p>
 
       <h1> Jaki jest wynik działania :  {randomNumber} razy {randomNumber2}</h1>
+      <h2> Twoj wynik mnożenia to : {value}</h2>
       <h2> Podaj wynik mnożenia : 
 
         <input type="number" className="inputValue" onChange={handleOnChange} value={value}></input>
         
         </h2>
+
+        <h1>  {matchResult ? "doskonale zgadles" : "sproboj jeszcze raz"}</h1>
 
 
         <button onClick={handleOnClickButton}>Zatwierdzam</button>
