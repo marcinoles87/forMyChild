@@ -1,30 +1,36 @@
-import React , {useState} from "react";
+import React , {useEffect , useState } from "react";
 import app from "../src/app.css" ;
 
+const handlerandomNumbers = () => {
+  var x =  Math.floor(Math.random()*10)
+  console.log(x);
 
+  return x;
+}
 
+ 
+
+  const randomNumber = Math.floor(Math.random()*10);
+  const randomNumber2 = Math.floor(Math.random()*10);
 
 function App() {
-
-
-  const handlerandomNumbers = () => {
-    const randomNumber = Math.floor(Math.random()*10);
-    const randomNumber2 = Math.floor(Math.random()*10);
-    const  result = randomNumber*randomNumber2;
-    
-
-  }
 
 
   const [number , setNumber] = React.useState(0);
   const [value, setValue] = React.useState('') ;
  
 
- 
+ const  result = randomNumber*randomNumber2;
+
 
   const handleOnChange = event => setValue(event.target.value);
 
-  const handleOnClickButton = () => { console.log("dziala")
+  
+ 
+    
+   
+
+  const handleOnClickButton = () => { console.log("dziala") 
   
 
   if(result == value) {
@@ -44,7 +50,7 @@ function App() {
 
       <h1> Jaki jest wynik działania :  {randomNumber} razy {randomNumber2}</h1>
       <h2> wynik mnożenia to : {result}</h2>
-      <h2> twoja liczba to : {value}</h2>
+      <h2> twoja liczba to : {value}  {handlerandomNumbers} </h2>
 
 
 
