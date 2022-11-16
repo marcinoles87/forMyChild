@@ -10,11 +10,12 @@ const handlerandomNumbers = () => {
 
  
 
-  const randomNumber = Math.floor(Math.random()*10);
-  const randomNumber2 = Math.floor(Math.random()*10);
+
 
 function App() {
 
+  const randomNumber = Math.floor(Math.random()*10);
+  const randomNumber2 = Math.floor(Math.random()*10);
 
   const [number , setNumber] = React.useState(0);
   const [value, setValue] = React.useState('') ;
@@ -30,9 +31,8 @@ function App() {
     
    
 
-  const handleOnClickButton = () => { console.log("dziala") 
+  const handleOnClickButton = () => {
   
-
   if(result == value) {
     console.log("zgadles !!!")
     document.getElementById('demo').innerHTML = " Zgadles";
