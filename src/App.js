@@ -36,7 +36,9 @@ function App() {
   if(result == value) {
     console.log("zgadles !!!")
     document.getElementById('demo').innerHTML = " Zgadles";
-  }else(document.getElementById('demo').innerHTML = " proboj dalej")
+  }else{
+    document.getElementById('demo').innerHTML = " proboj dalej";
+    setValue('')}
 };
 
   
